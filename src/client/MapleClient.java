@@ -8,7 +8,6 @@ import handling.MapleServerHandler;
 import handling.cashshop.CashShopServer;
 import handling.channel.ChannelServer;
 import handling.login.LoginServer;
-import handling.netty.MaplePacketDecoder;
 import handling.world.MapleMessengerCharacter;
 import handling.world.MapleParty;
 import handling.world.MaplePartyCharacter;
@@ -1197,7 +1196,7 @@ public class MapleClient implements Serializable {
         if (!serverTransition && isLoggedIn()) {
             updateLoginState(MapleClient.LOGIN_NOTLOGGEDIN, getSessionIPAddress());
 
-/*            session.close();
+            /*            session.close();
             session.attr(MapleClient.CLIENT_KEY).set(null);
             session.attr(MaplePacketDecoder.DECODER_STATE_KEY).set(null);*/
         }
@@ -1508,7 +1507,7 @@ public class MapleClient implements Serializable {
 
     public int getCharacterSlots() {
         if (charslots != DEFAULT_CHARSLOT) {
-            return charslots + (36 - DEFAULT_CHARSLOT); //save a sql
+            return charslots; //save a sql
         }
         try {
             Connection con = DatabaseConnection.getConnection();
@@ -1531,7 +1530,7 @@ public class MapleClient implements Serializable {
         } catch (SQLException sqlE) {
         }
 
-        return charslots + (36 - DEFAULT_CHARSLOT);
+        return charslots;
     }
 
     public boolean gainCharacterSlot() {
@@ -1730,7 +1729,7 @@ public class MapleClient implements Serializable {
         }
         return farm;
     }
-    
+
     public List<String> getRanking(int limit) {
         List<String> ret = new LinkedList<>();
         Connection con = DatabaseConnection.getConnection();

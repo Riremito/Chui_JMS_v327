@@ -6,10 +6,10 @@
 	+ JDK 8
 	+ Netbeans
 	+ MySQL 5.6.12
-		+ database名 v327 (ソースコード上で直接指定 v207と被るため)
+		+ database名 chui_jms_v327
 
 ## 実行方法
-+ sqlをkkmsにimportする
++ sqlをchui_jms_v327にimportする
 + JMS v327.0のクライアントを用意する
 + Netbeansでビルド後
 	+ 帶介面啟動伺服器.batの工具の左上のボタンを押して装備などの情報を更新

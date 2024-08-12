@@ -7,7 +7,7 @@ public class ServerConfig {
 
     public static String SQL_IP = "127.0.0.1";
     public static String SQL_PORT = "3306";
-    public static String SQL_DATABASE = "v327";
+    public static String SQL_DATABASE = "chui_jms_v327";
     public static String SQL_USER = "root";
     public static String SQL_PASSWORD = "";
 
